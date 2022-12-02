@@ -1,12 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Mascota from "./text";
 
 const { useEffect, useState } = require("react");
 function Bandas() {
     const [bandas, setBandas] = useState([]);
     let cont = 1;
-    let year = 2022;
+
+
     useEffect(() => {
         const URL =
             "https://gist.githubusercontent.com/josejbocanegra/806a4dcd1af61b4cc498d24c52e84320/raw/8711b7af9091d2831ed043563cad2a61311b0a5f/music-bands.json";
@@ -16,7 +18,6 @@ function Bandas() {
                 setBandas(data);
             });
     }, []);
-
     return (
 
         <Row>
@@ -38,10 +39,7 @@ function Bandas() {
                                     {cont++}
                                 </th>
                                 <th scope="col" >
-
                                     {banda.name}
-
-
                                 </th>
                                 <th scope="col">
                                     {banda.country}
@@ -63,6 +61,7 @@ function Bandas() {
 
             </Col>
         </Row>
+
 
     )
 }
